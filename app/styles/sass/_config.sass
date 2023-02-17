@@ -1,0 +1,75 @@
+// USER VARIABLES SECTION
+
+$accent: #e8603c // Accent Color
+$textcolor: #414141 // Text Color
+$grey: #b9b9b9
+$fontsize: 16px // Body Font Size
+$lineheight: 1.65 // Document Line Height
+$userfont: BebasNeue, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+@import 'node_modules/slick-carousel/slick/slick.scss' // Optional Bootstrap Utilites
+@import 'node_modules/slick-carousel/slick/slick-theme.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('BebasNeue', normal, 400, '../fonts/BebasNeue-Regular.woff2')
+@include font('HelveticaNeue', normal, 400, '../fonts/HelveticaNeue-Roman.woff2')
+
+// GENERAL CSS SETTINGS
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	background-color: #fefefe
+
+h1, h2, h3, h4
+	padding: 0
+	margin: 0
+
+a
+	text-decoration: none
+	color: $grey
+
+ul
+	padding: 0
+	margin: 0
+
+li
+	list-style-type: none

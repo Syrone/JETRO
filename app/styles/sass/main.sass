@@ -1,0 +1,203 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+@import 'blocks/**/*'
+
+.header
+	&__inner
+		display: flex
+		justify-content: space-between
+		align-items: center
+		background-color: #fefefe
+		height: 80px
+		&-logo
+			font-size: 36px
+			font-weight: 700
+			text-transform: uppercase
+			color: $accent
+			span
+				color: lighten($accent, 20)
+		&-nav
+			ul
+				li
+					display: inline-block
+					a
+						transition: all .3s
+						&:hover
+							color: $accent
+				li + li
+					padding-left: 25px
+
+.slider
+	margin-bottom: 40px
+	&__inner
+		margin: 0 10px 0 10px
+	&__line
+		background-color: lighten($accent, 10)
+		height: 60px
+		width: 100%
+		top: 80px
+		z-index: -1
+		position: absolute
+	&__item
+		position: relative
+	&__content
+		width: 415px
+		height: 125px
+		padding: 18px
+		left: 35px
+		bottom: 32px
+		position: absolute
+		background-color: rgba($accent, 0.9)
+		&-title
+			h2
+				font-size: 18px
+				margin-bottom: 8px
+				color: #fff
+		&-descr
+			p
+				font-family: HelveticaNeue, sans-serif
+				font-size: 12px
+				line-height: 15px
+				color: #fff
+
+.advantages
+	margin-bottom: 45px
+	&__inner
+		display: flex
+		justify-content: space-between
+		gap: 55px
+	&__item
+		&-title
+			padding: 0 25px 0 70px
+			margin-bottom: 30px
+			position: relative
+			h2
+				font-size: 18px
+				line-height: 24px
+				margin-bottom: 8px
+				color: $accent
+			&::before
+				content: ''
+				width: 55px
+				height: 55px
+				left: 0
+				top: -5px
+				background-image: url(../images/dist/icons/gear.svg)
+				background-size: cover
+				background-position: center
+				background-repeat: no-repeat
+				position: absolute
+		&-descr
+			p
+				font-family: HelveticaNeue, sans-serif
+				font-size: 12px
+				font-weight: 400
+				line-height: 18px
+				color: $textcolor
+		&-btn
+			display: inline-block
+			font-size: 12px
+			line-height: 24px
+			color: #fff
+			background-color: $accent
+			border: none
+			padding: 1px 12px
+			&:before
+				content: ''
+				// display: inline-block
+				vertical-align: middle
+				height: 100%
+
+.advantages__check .advantages__item-title::before
+	top: 0
+	width: 45px
+	height: 45px
+	background-image: url(../images/dist/icons/check.svg)
+
+.advantages__person .advantages__item-title::before
+	top: 0
+	width: 45px
+	height: 45px
+	background-image: url(../images/dist/icons/person.svg)
+
+
+.works
+	margin-bottom: 45px
+	&__inner
+		&-title
+			display: flex
+			align-items: center
+			font-size: 18px
+			color: $accent
+			position: relative
+			margin-bottom: 20px
+			&::before
+				content: ''
+				height: 20px
+				width: calc( 100% - 100px )
+				right: 0
+				position: absolute
+				background-image: url(../images/dist/titlebefore.png)
+				background-position: center
+				background-size: cover
+				z-index: -1
+	&__slide
+		&-img
+			img
+				display: inline-block
+				width: 100%
+				background-repeat: no-repeat
+				background-position: center
+				background-size: cover
+		&-content
+			padding-left: 10px
+			padding-bottom: 7px
+			border: 1px solid $grey
+			border-top: none
+		&-title
+			font-size: 18px
+			line-height: 18px
+			padding-top: 15px
+			color: $grey
+			text-transform: uppercase
+		&-descr
+			font-size: 11px
+			line-height: 18px
+			color: $accent
+
+.works__slider .slick-slide
+	margin-left: 20px
+
+.works__slider .slick-list
+	margin-left: -16px
+
+.footer
+	background-color: lighten($accent, 10)
+	&__inner
+		display: flex
+		justify-content: space-between
+		gap: 40px
+		padding: 37px 37px 34px 34px
+		margin: 0 10px
+		background-color: $accent
+	&__item
+		width: 33%
+		color: #fff
+		&-title
+			font-size: 18px
+		&-descr 
+			font-family: HelveticaNeue, sans-serif
+			font-size: 12px
+			span
+				display: block
+				margin-top: 5px
+				color: lighten($accent, 20)
+			p
+				margin-bottom: 0
+				margin-top: 15px
+				span
+					display: inline-block
+		&-img
+			margin-top: 15px
